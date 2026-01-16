@@ -5,7 +5,6 @@ services:
       context: .
       args:
         - ARGUMENT_VAR=${example_var}
-    container_name: dog-backend
     ports:
       - "${BACKEND_PORT:-8000}:8000"
     env_file:
