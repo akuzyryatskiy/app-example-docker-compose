@@ -7,7 +7,7 @@ services:
         - ARGUMENT_VAR=${example_var}
     container_name: dog-backend
     ports:
-      - "8000:8000"
+      - "${BACKEND_PORT:-8000}:8000"
     env_file:
       - .env_example
     environment:
@@ -21,7 +21,7 @@ services:
     env_file:
       - .env_example
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     environment:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
